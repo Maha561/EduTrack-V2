@@ -1,0 +1,27 @@
+@import "./Login.css";
+
+select{
+
+    width:100%;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    border:1px solid #d1d5db;
+
+    font-size:16px;
+
+    margin-top:5px;
+
+    outline:none;
+
+    background:white;
+
+}
+
+select:focus{
+
+    border-color:#3b82f6;
+
+}
