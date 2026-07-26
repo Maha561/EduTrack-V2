@@ -11,7 +11,6 @@ import java.util.List;
 @Configuration
 public class CorsConfig {
 
-
     @Bean
     public CorsFilter corsFilter() {
 
@@ -19,40 +18,26 @@ public class CorsConfig {
 
         config.setAllowCredentials(true);
 
-        config.setAllowedOrigins(
-                List.of(
-                        "http://localhost:5173",
-                        "http://localhost:5174",
-                        "http://localhost:5175"
-                )
-        );
+        config.setAllowedOrigins(List.of(
+                "http://localhost:5173",
+                "http://localhost:5174",
+                "http://localhost:5175",
+                "https://edu-track-v2-tau.vercel.app"
+        ));
 
-        config.setAllowedHeaders(
-                List.of("*")
-        );
+        config.setAllowedHeaders(List.of("*"));
 
-        config.setAllowedMethods(
-                List.of(
-                        "GET",
-                        "POST",
-                        "PUT",
-                        "DELETE"
-                )
-        );
+        config.setAllowedMethods(List.of(
+                "GET",
+                "POST",
+                "PUT",
+                "DELETE",
+                "OPTIONS"
+        ));
 
-
-        UrlBasedCorsConfigurationSource source =
-                new UrlBasedCorsConfigurationSource();
-
-
-        source.registerCorsConfiguration(
-                "/**",
-                config
-        );
-
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", config);
 
         return new CorsFilter(source);
-
     }
-
 }
