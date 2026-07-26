@@ -7,19 +7,19 @@ import "./Login.css";
 function Login() {
     const navigate = useNavigate();
     const [role, setRole] = useState("ADMIN");
-    const [email, setEmail] = useState("admin@edutrack.edu");
-    const [password, setPassword] = useState("admin123");
+    const [email, setEmail] = useState("admin@edutrackV2.com");
+    const [password, setPassword] = useState("edutrackv2");
     const [errorMsg, setErrorMsg] = useState("");
     const [isLoading, setIsLoading] = useState(false);
 
     const handleRoleChange = (selectedRole) => {
         setRole(selectedRole);
         if (selectedRole === "ADMIN") {
-            setEmail("admin@edutrack.edu");
-            setPassword("admin123");
+            setEmail("admin@edutrackV2.com");
+            setPassword("edutrackv2");
         } else {
-            setEmail("maha2@gmail.com");
-            setPassword("12345");
+            setEmail("student@edutrackv2.com");
+            setPassword("Student@123");
         }
         setErrorMsg("");
     };
